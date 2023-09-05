@@ -67,6 +67,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
+static const char *flamcmd[] = { "flameshot", "gui", NULL };
 #include <X11/XF86keysym.h>
 #define TERMINAL "st"
 
@@ -120,7 +121,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
-
+  { 0, XK_Print,		                            spawn,		                         {.v = flamcmd } },
 };
 
 /* button definitions */
