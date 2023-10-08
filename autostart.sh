@@ -6,5 +6,5 @@ nitrogen --restore &
 exec xautolock -time 10 -locker slock &
 exec clipmenud &
 slstatus &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 %
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xset r rate 300 50
