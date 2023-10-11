@@ -117,7 +117,6 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("playerctl stop") },
 	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("playerctl position 10-") },
 	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("playerctl position 10+") },
-	{ 0, XF86XK_AudioMedia,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") },
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
