@@ -79,6 +79,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *flamcmd[] = { "flameshot", "gui", NULL };
+static const char *rofi_clipboard[] = { "rofi", "-modi", "clipboard:greenclip print", "-show", "clipboard", "-run-command", "{cmd}", NULL };
 #include <X11/XF86keysym.h>
 #include "movestack.c"
 #define TERMINAL "st"
@@ -136,8 +137,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle") },
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
-  { 0, XK_Print,		                            spawn,		                         {.v = flamcmd } },
-  { MODKEY,                       XK_v,      spawn,      SHCMD("clipmenu") },
+  { 0, XK_Print,		        spawn,		 {.v = flamcmd } },
+  { MODKEY,   XK_v,      spawn,        {.v = rofi_clipboard } },  
 };
 
 /* button definitions */
