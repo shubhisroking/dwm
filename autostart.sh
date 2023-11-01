@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Merge X resources
 xrdb -merge ~/.Xresources &
 
