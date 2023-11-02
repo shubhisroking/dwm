@@ -138,7 +138,10 @@ static const Key keys[] = {
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		{.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
   { 0, XK_Print,		        spawn,		 {.v = flamcmd } },
-  { MODKEY,   XK_v,      spawn,        {.v = rofi_clipboard } },  
+  { MODKEY,   XK_v,      spawn,        {.v = rofi_clipboard } },
+  { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+  { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 };
 
 /* button definitions */
