@@ -16,7 +16,4 @@ nitrogen --restore &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set the keyboard repeat rate
-xset r rate 300 50 &
-
-# start easyeffects
-easyeffects --gapplication-service
+xset r rate 300 50
